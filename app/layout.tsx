@@ -7,7 +7,7 @@ import { Footer } from "@/components/layout/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://reviewpropfirm.vercel.app'),
+  metadataBase: new URL('https://propfirmcircle.vercel.app'),
   title: {
     default: 'Prop Firm Reviews | Find Your Perfect Funding Partner',
     template: '%s | Prop Firm Reviews',
@@ -20,12 +20,12 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   verification: {
-    google: 'your-google-site-verification-code', // User needs to replace this
+    google: 'a4uw-76wRgn19CoI2zARtb1A3J9899tHoos_B_WM99E',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://reviewpropfirm.vercel.app',
+    url: 'https://propfirmcircle.vercel.app',
     title: 'Prop Firm Reviews | Find Your Perfect Funding Partner',
     description: 'Compare the best proprietary trading firms. Unbiased reviews, funding rules, profit splits, and trader ratings.',
     siteName: 'Prop Firm Reviews',

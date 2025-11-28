@@ -3,7 +3,7 @@ import { firms } from '@/lib/data'
 import { blogPosts } from '@/lib/blog-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://propfirmreviews.com' // Replace with actual domain
+    const baseUrl = 'https://propfirmcircle.vercel.app' 
 
     const firmUrls = firms.map((firm) => ({
         url: `${baseUrl}/reviews/${firm.slug}`,

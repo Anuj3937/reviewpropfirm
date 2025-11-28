@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://propfirmreviews.com/sitemap.xml', // Replace with actual domain
+        sitemap: 'https://propfirmcircle.vercel.app/sitemap.xml', // Replace with actual domain
     }
 }
