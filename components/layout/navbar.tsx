@@ -50,6 +50,12 @@ export function Navbar() {
                         <Link href="/compare" className="text-sm font-medium text-zinc-300 hover:text-white transition-colors hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">
                             Compare
                         </Link>
+                        <Link href="/offers" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+                            Offers
+                        </Link>
+                        <Link href="/best-sellers" className="text-sm font-medium text-zinc-300 hover:text-white transition-colors hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">
+                            Rankings
+                        </Link>
                         <Link href="/tools" className="text-sm font-medium text-zinc-300 hover:text-white transition-colors hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] flex items-center gap-1.5">
                             <Calculator className="h-4 w-4" />
                             Tools
@@ -126,11 +132,14 @@ export function Navbar() {
                         <nav className="flex flex-col gap-6 text-lg font-medium text-zinc-300">
                             <Link href="/reviews" onClick={() => setIsMobileMenuOpen(false)}>Reviews</Link>
                             <Link href="/compare" onClick={() => setIsMobileMenuOpen(false)}>Compare</Link>
+                            <Link href="/offers" onClick={() => setIsMobileMenuOpen(false)} className="text-primary">Offers</Link>
+                            <Link href="/best-sellers" onClick={() => setIsMobileMenuOpen(false)}>Rankings</Link>
                             <Link href="/tools" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-2">
                                 <Calculator className="h-5 w-5" />
                                 Tools
                             </Link>
                             <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</Link>
+                            <Link href="/hidden-rules" onClick={() => setIsMobileMenuOpen(false)} className="text-amber-400">Hidden Rules</Link>
                             <hr className="border-white/10" />
                             {user ? (
                                 <div className="flex flex-col gap-4">
