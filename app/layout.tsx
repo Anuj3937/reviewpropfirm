@@ -4,6 +4,7 @@ import "./globals.css"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { AuthProvider } from "@/contexts/AuthContext"
+import { OrganizationSchema, WebsiteSchema } from "@/components/seo/json-ld"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -66,6 +67,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={inter.className}>
+        <OrganizationSchema />
+        <WebsiteSchema />
         <AuthProvider>
           <Navbar />
           <main>{children}</main>
