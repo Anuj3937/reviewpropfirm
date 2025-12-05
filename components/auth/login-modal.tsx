@@ -25,8 +25,9 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
             setError('')
             await signInWithGoogle()
             onClose()
-        } catch {
-            setError('Failed to sign in with Google')
+        } catch (err) {
+            // err.message now contains the user-friendly error from AuthContext
+            setError(err instanceof Error ? err.message : 'Failed to sign in with Google')
         } finally {
             setLoading(false)
         }
@@ -44,8 +45,12 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
                 await signInWithEmail(email, password)
             }
             onClose()
-        } catch {
-            setError(isSignUp ? 'Failed to create account' : 'Invalid email or password')
+            // Reset form
+            setEmail('')
+            setPassword('')
+        } catch (err) {
+            // err.message now contains the user-friendly error from AuthContext
+            setError(err instanceof Error ? err.message : (isSignUp ? 'Failed to create account' : 'Invalid email or password'))
         } finally {
             setLoading(false)
         }
