@@ -1,27 +1,9 @@
 "use client"
 
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { useState } from "react"
-import { CheckCircle2 } from "lucide-react"
+import { NewsletterForm } from "@/components/newsletter/newsletter-form"
 
 export function Footer() {
-    const [email, setEmail] = useState("")
-    const [subscribed, setSubscribed] = useState(false)
-
-    const handleSubscribe = (e: React.FormEvent) => {
-        e.preventDefault()
-        if (email) {
-            setSubscribed(true)
-            // Here you would typically send the email to your API
-            console.log("Subscribed:", email)
-            setTimeout(() => {
-                setEmail("")
-                setSubscribed(false)
-            }, 3000)
-        }
-    }
-
     return (
         <footer className="bg-black/40 border-t border-white/5 pt-16 pb-8">
             <div className="container">
@@ -40,7 +22,13 @@ export function Footer() {
                             We help traders find the right funding partner to scale their trading career.
                         </p>
                         <div className="flex gap-4">
-                            {/* Social icons would go here */}
+                            {/* Social icons */}
+                            <a href="https://twitter.com/propfirmreviews" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-primary/50 transition-all">
+                                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+                            </a>
+                            <a href="https://www.youtube.com/@propfirmreviews" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:border-primary/50 transition-all">
+                                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" /></svg>
+                            </a>
                         </div>
                     </div>
 
@@ -49,6 +37,7 @@ export function Footer() {
                         <ul className="space-y-4 text-zinc-400">
                             <li><Link href="/reviews" className="hover:text-primary transition-colors">All Reviews</Link></li>
                             <li><Link href="/compare" className="hover:text-primary transition-colors">Compare Firms</Link></li>
+                            <li><Link href="/offers" className="hover:text-primary transition-colors">Discount Codes</Link></li>
                             <li><Link href="/tools" className="hover:text-primary transition-colors">Trading Tools</Link></li>
                             <li><Link href="/blog" className="hover:text-primary transition-colors">Trading Blog</Link></li>
                             <li><Link href="/get-listed" className="hover:text-primary transition-colors">Get Listed</Link></li>
@@ -60,29 +49,7 @@ export function Footer() {
                         <p className="text-zinc-400 text-sm mb-4">
                             Get the latest prop firm discounts and news delivered to your inbox.
                         </p>
-                        <form onSubmit={handleSubscribe} className="space-y-2">
-                            <input
-                                type="email"
-                                placeholder="Enter your email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                className="w-full h-10 rounded-lg bg-white/5 border border-white/10 px-3 text-sm text-white focus:outline-none focus:border-primary/50 transition-all"
-                                required
-                            />
-                            <Button
-                                type="submit"
-                                className="w-full bg-white text-black hover:bg-zinc-200 font-bold"
-                                disabled={subscribed}
-                            >
-                                {subscribed ? (
-                                    <span className="flex items-center gap-2">
-                                        <CheckCircle2 className="h-4 w-4 text-green-600" /> Subscribed
-                                    </span>
-                                ) : (
-                                    "Subscribe"
-                                )}
-                            </Button>
-                        </form>
+                        <NewsletterForm variant="footer" />
                     </div>
                 </div>
 
@@ -97,3 +64,4 @@ export function Footer() {
         </footer>
     )
 }
+

@@ -8,13 +8,33 @@ import { Calendar, Clock, ArrowRight, User } from "lucide-react"
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 
 export const metadata: Metadata = {
-    title: "Prop Firm Trading Blog | Tips, Strategies & News",
-    description: "Stay updated with the latest proprietary trading news, passing strategies, and industry insights. Expert articles for funded traders.",
+    title: "Prop Firm Trading Blog | Tips, Strategies & Industry News 2025",
+    description: "Expert trading tips, prop firm news, and strategies to pass your funded challenge. Learn risk management, drawdown control, and earn consistent profits as a funded trader.",
+    keywords: [
+        "prop firm trading tips",
+        "how to pass prop firm challenge",
+        "funded trader strategies",
+        "prop firm news",
+        "trading psychology",
+        "risk management prop firm",
+        "drawdown management",
+        "prop firm evaluation tips",
+        "best trading strategies for prop firms",
+        "consistency rule prop firm",
+        "prop firm trading psychology",
+        "funded account strategies",
+        "trading discipline",
+        "prop firm success stories",
+    ],
     openGraph: {
-        title: "Prop Firm Trading Blog | Tips, Strategies & News",
-        description: "Stay updated with the latest proprietary trading news, passing strategies, and industry insights.",
+        title: "Prop Firm Trading Blog | Tips, Strategies & Industry News",
+        description: "Expert trading tips and strategies to pass your funded challenge and earn consistent profits.",
         type: "website",
-    }
+        url: "https://thepropfirmreviews.vercel.app/blog",
+    },
+    alternates: {
+        canonical: "https://thepropfirmreviews.vercel.app/blog",
+    },
 }
 
 export default function BlogPage() {

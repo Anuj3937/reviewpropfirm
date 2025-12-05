@@ -1,13 +1,14 @@
 "use client"
 
 import Link from "next/link"
-import { Search, Menu, X, Calculator, LogOut } from "lucide-react"
+import { Menu, X, Calculator, LogOut } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { useAuth } from "@/contexts/AuthContext"
 import { LoginModal } from "@/components/auth/login-modal"
+import { SearchModal } from "@/components/search/search-modal"
 
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false)
@@ -66,14 +67,7 @@ export function Navbar() {
                     </div>
 
                     <div className="hidden md:flex items-center gap-4">
-                        <div className="relative">
-                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-500" />
-                            <input
-                                type="text"
-                                placeholder="Search firms..."
-                                className="h-10 w-64 rounded-full bg-white/5 border border-white/10 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all"
-                            />
-                        </div>
+                        <SearchModal />
 
                         {user ? (
                             <div className="flex items-center gap-3">
