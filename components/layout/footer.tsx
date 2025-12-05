@@ -49,6 +49,7 @@ export function Footer() {
                         <ul className="space-y-4 text-zinc-400">
                             <li><Link href="/reviews" className="hover:text-primary transition-colors">All Reviews</Link></li>
                             <li><Link href="/compare" className="hover:text-primary transition-colors">Compare Firms</Link></li>
+                            <li><Link href="/tools" className="hover:text-primary transition-colors">Trading Tools</Link></li>
                             <li><Link href="/blog" className="hover:text-primary transition-colors">Trading Blog</Link></li>
                             <li><Link href="/get-listed" className="hover:text-primary transition-colors">Get Listed</Link></li>
                         </ul>

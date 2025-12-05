@@ -3,11 +3,12 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
+import { AuthProvider } from "@/contexts/AuthContext"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://propfirmcircle.vercel.app'),
+  metadataBase: new URL('https://thepropfirmreviews.vercel.app'),
   title: {
     default: 'Prop Firm Reviews | Find Your Perfect Funding Partner',
     template: '%s | Prop Firm Reviews',
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://propfirmcircle.vercel.app',
+    url: 'https://thepropfirmreviews.vercel.app',
     title: 'Prop Firm Reviews | Find Your Perfect Funding Partner',
     description: 'Compare the best proprietary trading firms. Unbiased reviews, funding rules, profit splits, and trader ratings.',
     siteName: 'Prop Firm Reviews',
@@ -65,10 +66,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={inter.className}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <AuthProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   )
 }
+

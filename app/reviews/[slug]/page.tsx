@@ -171,6 +171,27 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
                             </div>
                         </div>
 
+                        {/* Hidden Rules / Fine Print */}
+                        {firm.hiddenRules && firm.hiddenRules.length > 0 && (
+                            <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-500/10 to-orange-500/5 border border-amber-500/20">
+                                <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
+                                    <AlertTriangle className="mr-3 h-6 w-6 text-amber-400" />
+                                    ⚠️ The Fine Print
+                                </h2>
+                                <p className="text-zinc-400 mb-6">
+                                    Important rules that may not be prominently displayed. Read carefully before purchasing.
+                                </p>
+                                <div className="space-y-3">
+                                    {firm.hiddenRules.map((rule, i) => (
+                                        <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-amber-500/10 border border-amber-500/20">
+                                            <AlertTriangle className="h-5 w-5 text-amber-400 shrink-0 mt-0.5" />
+                                            <span className="text-zinc-300 text-sm">{rule}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
                         {/* Full Review */}
                         <div className="prose prose-invert max-w-none">
                             <h2 className="text-3xl font-bold text-white mb-6">Full Review</h2>
